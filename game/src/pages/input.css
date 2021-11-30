@@ -1,0 +1,11 @@
+.ok {
+  color: green;
+}
+
+.bad {
+  color: red;
+}
+
+.warning {
+  color: yellow;
+}

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Board from '../components/BoardTic'
 import CalculateWinner from '../components/Winner'
+import '../styles/firstgame.scss'
 
 export default function TicTacToe() {
   const [history, setHistory] = useState([Array(9).fill(null)])
@@ -38,7 +39,7 @@ export default function TicTacToe() {
     })
   }
   return (
-    <>
+    <div>
       <h1>React tic tac toe with Hooks(tried)</h1>
       <Board squares={history[stepNumber]} onClick={handleClick} />
       <div className="info">
@@ -50,6 +51,6 @@ export default function TicTacToe() {
 
         <h3>{winner ? 'Winner:' + winner : 'Next Player' + xo}</h3>
       </div>
-    </>
+    </div>
   )
 }

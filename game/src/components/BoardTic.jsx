@@ -1,4 +1,5 @@
 import Square from './Square'
+import './board.scss'
 
 export default function Board({ squares, onClick }) {
   return (
