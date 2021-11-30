@@ -31,25 +31,27 @@ export default function TicTacToe() {
   const renderMoves = () => {
     return history.map((_step, move) => {
       const destination = move ? `Go to move #${move}` : 'Go to start'
+      // const style = "button"
       return (
-        <li key={move}>
-          <button onClick={() => jumpTo(move)}>{destination}</button>
+        <li className="__list" key={move}>
+          <button className="__button" onClick={() => jumpTo(move)}>
+            {destination}
+          </button>
         </li>
       )
     })
   }
   return (
-    <div>
-      <h1>React tic tac toe with Hooks(tried)</h1>
-      <Board squares={history[stepNumber]} onClick={handleClick} />
-      <div className="info">
-        <div>
+    <div className="first-game">
+      <h1 className="__title">React tic tac toe with Hooks</h1>
+      <div className="__game">
+        <Board squares={history[stepNumber]} onClick={handleClick} />
+        <div className="__infos">
           <h3>History</h3>
           {history.length}
           <ul>{renderMoves()}</ul>
+          <h3>{winner ? 'Winner:' + winner : 'Next Player: ' + xo}</h3>
         </div>
-
-        <h3>{winner ? 'Winner:' + winner : 'Next Player' + xo}</h3>
       </div>
     </div>
   )
